@@ -1,0 +1,30 @@
+
+class Prism {
+	double height, width, length;
+	public:
+		Prism(double h = 1.0, double w = 1.0, double l = 1.0)
+			: height(h), width(w), length(l) {}
+		virtual ~Prism(){}
+		virtual double Square() const = 0;
+		double Volume() const;
+		double GetHeight() const;
+		double GetWidth() const;
+		double GetLength() const;
+};
+
+class Box : public Prism {
+	public:
+		Box(double h = 1.0, double w = 1.0)
+			: Prism(h, w, w) {}
+		~Box(){}
+		virtual double Square() const;
+};
+
+class Cube : public Box{
+	public:
+		Cube(double h = 1.0)
+			: Box(h, h) {}
+		~Cube(){}
+		virtual double Square() const;
+};
+

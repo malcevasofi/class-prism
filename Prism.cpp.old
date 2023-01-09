@@ -1,0 +1,36 @@
+#include "Prism.h"
+
+
+using namespace std;
+
+double Prism::Volume() const {
+	return (height * Square());
+}
+
+double Prism::GetHeight() const {
+	return height;
+}
+
+double Prism::GetWidth() const {
+	return width;
+}
+
+double Prism::GetLength() const {
+	return length;
+}
+
+//Box::Box(double h, double w)
+//	: Prism(h, w, w) {}
+
+double Box::Square() const {
+	return (this->GetWidth() * this->GetWidth());
+}
+
+//Cube::Cube(double h)
+//	: Box(h, h) {}
+
+double Cube::Square() const {
+	return (this->GetHeight() * this->GetHeight());
+}
+
+
